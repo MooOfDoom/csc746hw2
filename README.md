@@ -27,7 +27,6 @@ processors, not the Intel Xeon Phi 7250 processors.  The simplest way to do this
 grab an interactive KNL node:
 salloc --nodes 1 --qos interactive --time 01:00:00 --constraint knl --account m3930
 
-
 Special instructions for MacOSX platforms:
 
 On Prof. Bethel's laptop, which is an intel-based Macbook Pro running Big Sur, and
@@ -45,17 +44,16 @@ in the CXXFLAGS line above with the path on your specific machine.
 
 For timing:
 
-You will need to modify the benchmark.cpp code to add timing instrumentation, to 
-report FLOPs executed, and so forth.
-
+The benchmark.cpp code has been modified to add timing instrumentation.
+FLOPs executed are calculated by hand by analyzing the algorithm.
 
 For matrix multiplication:
 
-There are stub routines inside degemm-basic.cpp and dgemm-blocked.cpp where you can
-add your code for doing basic and blocked matrix multiply, respectively.
+There are stub routines inside degemm-basic.cpp and dgemm-blocked.cpp where
+code has been added for doing basic and blocked matrix multiply, respectively.
 
 For blocked matrix multiply, in this implementation, the block size is being passed in as
-a parameter from the main benchmark.cpp code. You should write your blocked matrix multiply
-with the block size parameterized in this fashion (rather than being a hard-coded thing). 
+a parameter from the main benchmark.cpp code. Blocked matrix multiply has been written
+with the block size parameterized in this fashion (rather than being a hard-coded thing).
 
 #eof
